@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senarai Shift</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 10px;
+      margin: 5px 0;
+      background: #f0f0f0;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+    li:hover {
+      background: #dcdcdc;
+    }
+    .profile {
+      display: none;
+      margin-top: 20px;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .back-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>Senarai Shift Pekerja</header>
+  <div class="container">
+    <ul id="employee-list">
+      <li onclick="showProfile('Ali', 'Operator Sterilizer', '011-1111111')">Ali</li>
+      <li onclick="showProfile('Budi', 'Operator Capstan', '012-2222222')">Budi</li>
+      <li onclick="showProfile('Chong', 'Operator Oil Room', '013-3333333')">Chong</li>
+    </ul><div id="profile" class="profile">
+  <h2 id="name"></h2>
+  <p><strong>Jawatan:</strong> <span id="position"></span></p>
+  <p><strong>No. Telefon:</strong> <span id="phone"></span></p>
+  <button class="back-btn" onclick="goBack()">Kembali</button>
+</div>
+
+  </div>  <script>
+    function showProfile(name, position, phone) {
+      document.getElementById('employee-list').style.display = 'none';
+      document.getElementById('profile').style.display = 'block';
+      document.getElementById('name').innerText = name;
+      document.getElementById('position').innerText = position;
+      document.getElementById('phone').innerText = phone;
+    }
+
+    function goBack() {
+      document.getElementById('employee-list').style.display = 'block';
+      document.getElementById('profile').style.display = 'none';
+    }
+  </script></body>
+</html>
